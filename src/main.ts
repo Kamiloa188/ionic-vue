@@ -1,8 +1,16 @@
+// Above the createApp() line
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { addIcons } from 'ionicons'
+import { camera } from 'ionicons/icons'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
+//  vuex 
+import { store } from './store'
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -25,8 +33,15 @@ import './theme/variables.css';
 
 const app = createApp(App)
   .use(IonicVue)
-  .use(router);
-  
+  .use(router)
+  .use(store)
+
+addIcons({
+  'camera': camera
+})
+
 router.isReady().then(() => {
   app.mount('#app');
 });
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
