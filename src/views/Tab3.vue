@@ -24,11 +24,31 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
+  onIonViewWillEnter,
+  onIonViewDidEnter,
+  onIonViewWillLeave,
+  onIonViewDidLeave,
 } from "@ionic/vue";
 import ExampleProject from "@/components/ExampleProject.vue";
+import { useStore } from "vuex";
+import { computed } from "@vue/reactivity";
 
 export default {
   name: "Tab3",
+
+  // ionViewWillEnter() {
+  //   console.log("ionViewWillEnter", 1);
+  // },
+  // ionViewDidEnter() {
+  //   console.log("ionViewDidEnter", 2);
+  // },
+  // ionViewDidLeave() {
+  //   console.log("ionViewDidLeave", 3);
+  // },
+  // ionViewWillLeave() {
+  //   console.log("ionViewWillLeave", 4);
+  // },
+
   components: {
     ExampleProject,
     IonHeader,
@@ -36,6 +56,24 @@ export default {
     IonTitle,
     IonContent,
     IonPage,
+  },
+  setup() {
+    const store = useStore();
+
+    // onIonViewWillEnter(() => {
+    //   console.log("onIonViewWillEnter", 1);
+    // });
+    // onIonViewDidEnter(() => {
+    //   console.log("onIonViewDidEnter", 2);
+    // });
+    // onIonViewWillLeave(() => {
+    //   console.log("onIonViewWillLeave", 3);
+    // });
+    // onIonViewDidLeave(() => {
+    //   console.log("onIonViewDidLeave", 4);
+    // });
+
+    return {};
   },
 };
 </script>

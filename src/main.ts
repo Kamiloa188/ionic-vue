@@ -1,7 +1,7 @@
 // Above the createApp() line
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { addIcons } from 'ionicons'
-import { camera } from 'ionicons/icons'
+import { camera, walk, wifi, pizza } from 'ionicons/icons'
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -37,7 +37,12 @@ const app = createApp(App)
   .use(store)
 
 addIcons({
-  'camera': camera
+  'camera': camera,
+  'walk': walk,
+  'wifi': wifi,
+   'pizza' : pizza,
+
+
 })
 
 router.isReady().then(() => {
